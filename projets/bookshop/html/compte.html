@@ -1,0 +1,130 @@
+<!doctype html>
+
+<html lang="fr">
+
+<head>
+    <title>BookShop | Compte</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../styles/bookshop.css">
+</head>
+
+<body>
+
+    <main>
+        <aside>
+            <a href="http://www.facebook.com" target="_blank"></a>
+            <a href="http://www.twitter.com" target="_blank"></a>
+            <a href="http://plus.google.com" target="_blank"></a>
+            <a href="http://www.pinterest.com" target="_blank"></a>
+        </aside>
+
+        <header>
+            <nav>
+                <a href="../index.html" title="Retour à la page d'accueil"></a>
+                <a href="./php/recherche.php" title="Effectuer une recherche"></a>
+                <a href="./php/panier.php" title="Voir votre panier"></a>
+                <a href="./php/liste.php" title="Voir une liste de cadeaux"></a>
+                <a href="./html/compte.html" title="Consulter votre compte"></a>
+                <a href="./php/deconnexion.php" title="Se déconnecter"></a>
+            </nav>
+            <img src="./images/soustitre.png" alt="sous titre">
+        </header>
+        <form action="compte.html" method="GET" >
+            <h1>Gestion des information personnelles</h1>
+            <section>
+                <h2>Information personnelles</h2>
+                <p>Merci de remplir les informations suivantes (tous les champs sont obligatoires)</p>
+
+            
+                <div id="info_perso">
+                    <label for="nom_input" id="nom_text">Votre nom:</label>
+                    <label for="prenom_input" id="prenom_text">Votre prénom:</label>
+                    <label for="email_input" id="email_text">Votre adresse email:</label>
+                    <label for="tel_input" id="tel_text">Votre numéro de téléphone:</label>
+                    <label for="date_input_jour" id="date_text">Votre date de naissance:</label>
+                    
+                        <input id="nom_input" name="txtNom" type="text" placeholder="Entrez votre nom" required>
+                        <input id="prenom_input" name="txtPrenom" type="text" placeholder="Entrez votre prénom" required>
+                        <input id="email_input" name="txtEmail" type="email" placeholder="xxx@yyy.zzz"  required>
+                        <input id="tel_input" name="telNum" type="tel" placeholder="Format : 01.02.03.04.05.06"  required pattern="^([0-9]{2}[. ]){4}[0-9]{2}$">
+                        <div id="date_input">
+                            <input id="date_input_jour" name="numJour" type="number" max="31" min="1" required>
+                            <select name="numMois">
+                                <option value="01">Janvier</option>
+                                <option value="02">Février</option>
+                                <option value="03">Mars</option>
+                                <option value="04">Avril</option>
+                                <option value="05">Mai</option>
+                                <option value="06">Juin</option>
+                                <option value="07">Juillet</option>
+                                <option value="08">Août</option>
+                                <option value="09">Septembre</option>
+                                <option value="10">Octobre</option>
+                                <option value="11">Novembre</option>
+                                <option value="12">Décembre</option>
+                            </select>
+                            <input name="numAnnee" type="number" max="2006" min="1900" required>
+                        </div>
+                    
+                </div>
+            </section>
+            
+
+            <section >
+                <h2>Formule d'abonnement</h2>
+                <p>Choisissez la durée d'abonnement souhaitée:</p>
+                <div id="div_abonnement">
+                    <input type="radio" id="radio1-img" name="radAbo" value="1">
+
+                    <label for="radio1-img">1 mois</label>
+
+                    <input type="radio" id="radio3-img" name="radAbo" value="3" checked>
+
+                    <label for="radio3-img">3 mois</label>
+                    
+                    <input type="radio" id="radio6-img" name="radAbo" value="6">
+                    <label for="radio6-img">6 mois</label>
+                    <input type="radio" id="radio12-img" name="radAbo" value="12">
+                    <label for="radio12-img">1 ans</label>
+                </div>
+
+                <p>Choisissez le type de support:</p>
+                <div id="div_support">
+                    <input id="cbElec" type="checkbox" name="cbElec" value="1">
+                    <label id="cbElec_text" for="cbElec">version éléctronique</label>
+
+                    <input id="cbPapier" type="checkbox" name="cbPapier" value="1">
+                    <label id="cbPapier_text" for="cbPapier">version papier</label>
+
+                    <label class="info_livraison" id="txtAdresse_text" for="txtAdresse">Votre adresse :</label>
+                    <input class="info_livraison" id="txtAdresse" name="txtAdresse" type="text">
+
+                    <label class="info_livraison" id="numCP_text" for="numCP">Votre code postale :</label>
+                    <input class="info_livraison" id="numCP" name="numCP" type="number">
+
+                    <label class="info_livraison" id="txtVille_text" for="txtVille">Votre ville:</label>
+                    <input class="info_livraison" id="txtVille" name="txtVille" type="text">
+                </div>
+          
+
+
+            </section>
+            <section >
+                <h2>Validation</h2>
+                <div id="div_validation">
+                    <input id="cbCGU" type="checkbox" name="cbCGU d'utilisation" value="1" required>
+                    <label id="cbCGU_text" for="cbCGU">J'ai bien lu et j'accepte les conditions générales d'utilisation.</label>
+                
+                    <input id="cbOffres" type="checkbox" name="cbOffres" value="1">
+                    <label id="cbOffres_text" for="cbOffres">J'accepte de recevoir des offres de nos partenaires par mail</label>.
+                </div>
+                <div id="div_bouton">
+                    <input name="btnValider" value="S'abonner" type="submit">
+                    <input name="annuler" value="Annuler" type="reset">
+                </div>
+            </section>
+                <input type="hidden" name="txtID" value="TCoutant">
+        </form>
+    </main>
+    
+</body>

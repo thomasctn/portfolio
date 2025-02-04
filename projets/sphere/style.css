@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: radial-gradient(circle, #001a00, #000); /* Fond sombre avec teinte verte */
+}
+
+canvas {
+    display: block;
+}

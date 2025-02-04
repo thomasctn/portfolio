@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>test</title>
+        <link rel="stylesheet" href="test5.css">
+    </head>
+    <body>
+        <div class="container">
+            <div id="div_button">
+                <div id="div_generate">
+                    <button onclick="Generate();">Generate</button>
+                    <label for="slider">Nombre de blocs :</label>
+                    <input type="range" id="slider" min="1" max="120" value="80" oninput="updateValue(this.value)"
+                    >
+                    <div class="value-display" id="currentValue">80</div>
+                </div>
+                
+                <button onclick="toggleShape();">Circle | Square</button>
+                <button onclick="randomizeColors();">Randomize Colors</button>
+
+                <!-- Checkbox to toggle auto color change -->
+                <div class="auto">
+                    <label id="autoColorChange_text" for="autoColorChange">Auto Color Change</label>
+                    <input type="checkbox" id="autoColorChange" onclick="toggleAutoColorChange();">
+                </div>
+                <div class="auto">
+                    <label id="autoShapeChange_text" for="autoShapeChange">Auto Shape Change</label>
+                    <input type="checkbox" id="autoShapeChange" onclick="toggleAutoShapeChange();">
+                </div>
+                <div class="auto">
+                    <label id="AutoGenerateBlocks_text" for="AutoGenerateBlocks">Auto Generation Blocks</label>
+                    <input type="checkbox" id="AutoGenerateBlocks" onclick="toggleAutoGenerateBlocks();">
+                </div>
+            </div>
+            
+            
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            let container = document.querySelector('.container');
+            let shape = 'square'; // Start with square shape
+            let autoColorChange = false; // Flag for auto color change
+            let colorInterval, shapeInterval, generateInterval;
+
+            // Create 80 blocks
+            function create(){
+                for (let i = 0; i < nombreBlocks ; i++) {
+                    let blocks = document.createElement('div');
+                    blocks.classList.add('block', shape); // Add the default shape class
+                    container.appendChild(blocks);
+                }
+            }
+            function removeBlocks() {
+                // Sélectionne tous les éléments avec la classe 'blocks'
+                const blocks = document.querySelectorAll('.block');
+                
+                // Parcourt chaque élément et le retire du DOM
+                blocks.forEach(block => block.remove());
+            }
+            
+            let nombreBlocks = 80;
+            let Acreer =1;
+            // Fonction pour mettre à jour la valeur
+            function updateValue(value) {
+                nombreBlocks = parseInt(value); // Mise à jour de la variable
+                document.getElementById('currentValue').textContent = nombreBlocks; // Mise à jour de l'affichage
+                Acreer=1;
+            }
+            // Generate animation
+            function Generate() {
+                if (Acreer===1){
+                    removeBlocks()
+                    create();
+                    Acreer=0;
+                    Generate();
+                }
+                else {
+                    anime({
+                        targets: '.block',
+                        translateX: function () {
+                            return anime.random(-700, 700);
+                        },
+                        translateY: function () {
+                            return anime.random(-500, 500);
+                        },
+                        scale: function () {
+                            return anime.random(1, 5);
+                        },
+                        duration: 250,
+                        easing: 'easeInOutQuad',
+                    });
+                }
+
+            }
+
+            // Toggle between different shapes (circle or square)
+            function toggleShape() {
+                if (shape === 'square') {
+                    shape = 'circle';
+                } else {
+                    shape = 'square';
+                }
+
+                let blocks = document.querySelectorAll('.block');
+                blocks.forEach(block => {
+                    block.classList.remove('square', 'circle');
+                    block.classList.add(shape); // Add the new shape class
+                });
+            }
+
+            // Randomize colors of all blocks
+            function randomizeColors() {
+                let colors = ['color1', 'color2', 'color3']; // The three colors
+                let blocks = document.querySelectorAll('.block');
+                blocks.forEach(block => {
+                    let randomColor = colors[Math.floor(Math.random() * colors.length)]; // Pick a random color
+                    block.classList.remove('color1', 'color2', 'color3'); // Remove old color
+                    block.classList.add(randomColor); // Add new random color
+                });
+            }
+
+            // Toggle the auto color change every 2 seconds
+            function toggleAutoColorChange() {
+                autoColorChange = document.getElementById('autoColorChange').checked;
+
+                if (autoColorChange) {
+                    colorInterval = setInterval(randomizeColors, 1000); // Change color every 2 seconds
+                } else {
+                    clearInterval(colorInterval); // Stop color change if unchecked
+                }
+            }
+
+            // Automatically change shape every 5 seconds
+            function toggleAutoShapeChange() {
+                autoShapeChange = document.getElementById('autoShapeChange').checked;
+                if (autoShapeChange) {
+                    
+                    shapeInterval = setInterval(toggleShape, 5000); // Change color every 2 seconds
+                } else {
+                    clearInterval(shapeInterval); // Stop color change if unchecked
+                }
+            }
+            function toggleAutoGenerateBlocks() {
+                AutoGenerateBlocks = document.getElementById('AutoGenerateBlocks').checked;
+                if (AutoGenerateBlocks) {
+                    
+                    generateInterval = setInterval(Generate, 10000); // Change color every 2 seconds
+                } else {
+                    clearInterval(generateInterval); // Stop color change if unchecked
+                }
+            }
+
+            // Automatically generate new blocks every 10 seconds
+            function autoGenerateBlocks() {
+                let blocks = document.querySelectorAll('.block');
+                blocks.forEach(block => {
+                    block.remove(); // Remove all current blocks
+                });
+
+                // Create 80 new blocks
+                for (let i = 0; i < 80; i++) {
+                    let blocks = document.createElement('div');
+                    blocks.classList.add('block', shape); // Add the default shape class
+                    container.appendChild(blocks);
+                }
+            }
+
+        </script>
+    </body>
+</html>

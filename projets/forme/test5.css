@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: #202020;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container .block {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease; /* Smooth transition for shape change */
+}
+
+
+
+/* Circle Shape */
+.container .block.circle {
+    border-radius: 50%;
+}
+
+/* Color 1 */
+.container .block.color1 {
+    background-color: #444; /* Dark Gray */
+    transition: all 3s ease;
+}
+
+/* Color 2 */
+.container .block.color2 {
+    background-color: #03a9f4; /* Blue */
+    transition: all 3s ease;
+}
+
+/* Color 3 */
+.container .block.color3 {
+    background-color: purple; /* Yellow */
+    transition: all 3s ease;
+}
+
+.container #div_button button, .container #div_button .auto{
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    margin: 10px;
+    border: none;
+    background: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 15px 30px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.container #div_button button:hover , .container #div_button .auto:hover {
+    background-color: #da9898;
+}
+
+label {
+    color: black;
+    margin-right: 10px;
+}
+
+#div_button{
+    position: absolute;
+    align-items: center;
+    display: flex;
+    bottom: 50px;
+}
+#div_generate{
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    width: fit-content;
+    margin: 10px;
+    border: none;
+    background: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 15px 30px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#slider{
+     /* Supprimer le style par défaut */ /* Curseur circulaire */
+    background: #da9898;
+    color: #da9898; /* Couleur du curseur */
+    cursor: pointer;
+}
