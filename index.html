@@ -21,23 +21,34 @@
     </button>
 
     <div class="menu" id="menu">
-        <a href="#">Accueil</a>
+        <a href="#">Présentation</a>
         <a href="#">Mon CV</a>
         
-        <!-- Lien pour "Mes codes" avec sous-menu -->
-        <a href="#" id="mesCodesLink">Mes codes</a>
-        <div class="dropdown" id="mesCodesDropdown">
+        <!-- Lien "Mes codes" avec la liste déroulante affichée en permanence -->
+        <a href="#">Mes codes</a>
+        <div class="dropdown">
             <a href="#">Code 1</a>
             <a href="#">Code 2</a>
             <a href="#">Code 3</a>
         </div>
-
+    
         <a href="#">Contact</a>
     </div>
+
 
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
     <main>
+
+        <section id="cv">
+            <h2>Mon CV</h2>
+            <p>Voici mon CV. Cliquez sur le lien pour l'ouvrir :</p>
+            <a href="assets/CV.pdf" target="_blank" class="pdf-link">
+                <div class="pdf-preview">
+                    <embed src="assets/CV.pdf" type="application/pdf" width="60vh" height="700px">
+                </div>
+            </a>
+        </section>
         
         <section id="projects">
             <h2>Mes Projets</h2>
