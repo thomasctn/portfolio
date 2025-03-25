@@ -21,18 +21,18 @@
     </button>
 
     <div class="menu" id="menu">
-        <a href="#">Présentation</a>
-        <a href="#">Mon CV</a>
+        <a href="#" onclick="toggleMenu()">Présentation</a>
+        <a href="#cv" onclick="toggleMenu()">Mon CV</a>
         
         <!-- Lien "Mes codes" avec la liste déroulante affichée en permanence -->
-        <a href="#">Mes codes</a>
+        <a href="#mes codes" onclick="toggleMenu()">Mes codes</a>
         <div class="dropdown">
-            <a href="#">Code 1</a>
-            <a href="#">Code 2</a>
-            <a href="#">Code 3</a>
+            <a href="#bookshop" onclick="toggleMenu()">Bookshop</a>
+            <a href="#noobles" onclick="toggleMenu()">Nuit de l'info 2024</a>
+            <a href="#test" onclick="toggleMenu()">Test</a>
         </div>
     
-        <a href="#">Contact</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
     </div>
 
 
@@ -41,19 +41,21 @@
     <main>
 
         <section id="cv">
-            <h2>Mon CV</h2>
+            <h2 id="cv" >Mon CV</h2>
+
             <p>Voici mon CV. Cliquez sur le lien pour l'ouvrir :</p>
-            <a href="assets/CV.pdf" target="_blank" class="pdf-link">
-                <div class="pdf-preview">
-                    <embed src="assets/CV.pdf" type="application/pdf" width="60vh" height="700px">
-                </div>
-            </a>
+            
+            <a href="assets/CV.pdf" target="_blank">Télécharger mon CV (PDF)</a>
+    
+            <!-- Prévisualisation du PDF avec embed -->
+            <embed src="assets/CV.pdf" width="100%" height="600px" type="application/pdf">
+        </section>
         </section>
         
         <section id="projects">
-            <h2>Mes Projets</h2>
+            <h2 id="mes codes">Mes Codes</h2>
 
-            <div class="project">
+            <div class="project" id="bookshop">
                 <img src="assets/images/projet_bookshop.png" alt="Aperçu du projet 1">
                 <div class="project-details">
                     <h3><a href="projets/bookshop/index.html">Projet 1 : Bookshop</a></h3>
@@ -62,7 +64,7 @@
                 </div>
             </div>
 
-            <div class="project">
+            <div class="project" id="noobles">
                 <img src="assets/images/projet_noobles.png" alt="Aperçu du projet 2">
                 <div class="project-details">
                     <h3><a href="https://noobles.nuit-info.ofni.asso.fr/">Projet 2 : Nuit de l'info 2024</a></h3>
@@ -71,7 +73,7 @@
                 </div>
             </div>
 
-            <div class="project">
+            <div class="project" id="test">
                 <div class="project-details">
                     <h3><a href="projets/forme/test5.html">Test animation : Formes</a></h3>
                     <p>Différents tests avec des formes, des couleurs, des emplacments</p>
@@ -85,7 +87,7 @@
         </section>
     </main>
     <footer>
-        <p>Contactez-moi : <a href="mailto:thomascoutant.2005@gmail.com">thomascoutant.2005@gmail.com</a></p>
+        <p id="contact">Contactez-moi : <a href="mailto:thomascoutant.2005@gmail.com">thomascoutant.2005@gmail.com</a></p>
     </footer>
     <script src="assets/script.js"></script>
 </body>
