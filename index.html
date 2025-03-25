@@ -10,8 +10,35 @@
 <body>
     <header>
         <h1>Portfolio - COUTANT Thomas</h1>
+        
     </header>
+
+    <!-- Bouton pour ouvrir le menu -->
+    <button class="hamburger" onclick="toggleMenu()">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+    </button>
+
+    <div class="menu" id="menu">
+        <a href="#">Accueil</a>
+        <a href="#">Mon CV</a>
+        
+        <!-- Lien pour "Mes codes" avec sous-menu -->
+        <a href="#" id="mesCodesLink">Mes codes</a>
+        <div class="dropdown" id="mesCodesDropdown">
+            <a href="#">Code 1</a>
+            <a href="#">Code 2</a>
+            <a href="#">Code 3</a>
+        </div>
+
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
     <main>
+        
         <section id="projects">
             <h2>Mes Projets</h2>
 
@@ -49,5 +76,6 @@
     <footer>
         <p>Contactez-moi : <a href="mailto:thomascoutant.2005@gmail.com">thomascoutant.2005@gmail.com</a></p>
     </footer>
+    <script src="assets/script.js"></script>
 </body>
 </html>
