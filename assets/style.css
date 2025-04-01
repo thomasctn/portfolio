@@ -234,9 +234,7 @@
     margin-bottom: 20px;
 }
 
-#download-container {
-    text-align: left;
-}
+
 
 #download {
     margin: 10px;
@@ -312,4 +310,11 @@
         top: 15px; /* Ajuste la position du menu */
         left: 15px;
     }
+    .linux-info {
+        text-align: center ;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
 }
