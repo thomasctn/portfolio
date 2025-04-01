@@ -21,7 +21,7 @@
     </button>
 
     <div class="menu" id="menu">
-        <a href="#" onclick="toggleMenu()">Présentation</a>
+        <a href="#presentation" onclick="toggleMenu()">Présentation</a>
         <a href="#cv" onclick="toggleMenu()">Mon CV</a>
         
         <!-- Lien "Mes codes" avec la liste déroulante affichée en permanence -->
@@ -29,6 +29,7 @@
         <div class="dropdown">
             <a href="#bookshop" onclick="toggleMenu()">Bookshop</a>
             <a href="#noobles" onclick="toggleMenu()">Nuit de l'info 2024</a>
+            <a href="#paradoxtoe" onclick="toggleMenu()">Paradox Toe</a>
             <a href="#test" onclick="toggleMenu()">Test</a>
         </div>
     
@@ -40,12 +41,19 @@
     <div class="overlay" id="overlay"></div>
     <main class="wrapper">
         <div classe="content">
+            <section id="presentation">
+                <h2>Présentation</h2>
+                <p>Je m'appelle Thomas COUTANT, j'ai 17 ans et je suis étudiant en première année de DUT Informatique à l'IUT de Nantes.</p>
+                <p>J'ai commencé à apprendre le HTML et le CSS en autodidacte il y a quelques années, et j'ai décidé de poursuivre dans cette voie en intégrant un DUT Informatique.</p>
+                <p>Je suis actuellement à la recherche d'un stage de 10 semaines à partir du 2 mai 2022. Si vous êtes intéressé, n'hésitez pas à me contacter !</p>
+            </section>
+
             <section id="cv">
                 <h2 id="cv" >Mon CV</h2>
 
                 <p>Voici mon CV. Cliquez sur le lien pour l'ouvrir :</p>
                 
-                <a href="assets/CV.pdf" target="_blank">Télécharger mon CV (PDF)</a>
+                <a href="assets/CV.pdf" target="_blank" style="color: white;">Télécharger mon CV (PDF)</a>
         
                 <!-- Prévisualisation du PDF avec embed -->
                 <embed src="assets/CV.pdf" width="100%" height="600px" type="application/pdf">
@@ -72,6 +80,43 @@
                         <p>Ce site comporte 9 pages dont 3 mini-jeux. Parmi ceux-ci, seul le jeu du labyrinthe dans le noir est de ma seul composition</p>
                     </div>
                 </div>
+
+                <div class="project" id="paradoxtoe">
+
+                    <img src="projets/paradox_toe/paradoxtoe_image.png" alt="Aperçu du projet 3">
+
+                    <div class="project-details">
+                        <h3><a href="#">Projet 3 : Paradox Toe</a></h3>
+                        <p>Jeu inspiré du jeu de morpion ou tic tac toe, réalisé à l'occasion de la journée de recherche et développement du 27 mars 2025</p>
+                        
+                        <div id="download-container">
+                            <h3 style="text-decoration: underline; text-align: left;">Téléchargements</h3>
+                            <div id="download">
+                                <div class="download-links">
+                                    <div>
+                                        <p><strong>Application Linux :</strong></p>
+                                        <a class="downloadDoc download-link" href="projets/paradox_toe/paradox_toe_v0.8_linux" download>
+                                            Télécharger pour Linux
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <p><strong>Application Windows :</strong></p>
+                                        <a class="downloadDoc download-link" href="projets/paradox_toe/paradox_toe_v0.8_windows.exe" download>
+                                            Télécharger pour Windows
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <a class="downloadDoc pdf-link" href="projets/paradox_toe/Paradox_toe_regle.pdf" target="_blank" >
+                                    Télécharger les règles (PDF)
+                                </a>
+                            </div>
+                            <p class="linux-info">Sur Linux, il est possible que vous ayez besoin de le rendre exécutable : <code>chmod +x paradox_toe_v0.8_linux</code></p>
+                        </div>
+                    </div>
+                </div>
+
+
 
                 <div class="project" id="test">
                     <div class="project-details">
