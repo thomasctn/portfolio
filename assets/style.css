@@ -277,3 +277,40 @@
 .linux-info {
     text-align: left;
 }
+
+@media screen and (max-width: 768px) { 
+    .project {
+        flex-direction: column; /* Met l’image au-dessus du texte */
+        align-items: center;
+        text-align: center;
+        padding: 15px; /* Ajoute de l'espace */
+    }
+
+    .project img {
+        width: 100%;  /* L'image prend toute la largeur */
+        max-width: 250px; /* Mais pas plus grande que 250px */
+        height: auto;
+    }
+
+    .project-details {
+        width: 100%; /* Le texte prend toute la largeur */
+    }
+
+    #download {
+        width: 100%; /* La case de téléchargement prend toute la largeur */
+    }
+
+    .download-links {
+        grid-template-columns: 1fr; /* Les liens passent en colonne */
+        gap: 15px;
+    }
+
+    .linux-info {
+        text-align: center; /* Centre la commande Linux */
+    }
+
+    .hamburger {
+        top: 15px; /* Ajuste la position du menu */
+        left: 15px;
+    }
+}
