@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morpion Quantique</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="message-container">
+            <p id="start-message">Choisissez un mode de jeu</p>
+            <button id="jvsj-button">Joueur vs Joueur</button>
+            <button id="jvsordi-button">Joueur vs Ordinateur</button>
+        </div>
+
+        <div id="board-container">
+            <div id="board">
+                <button class="cell" data-index="0"></button>
+                <button class="cell" data-index="1"></button>
+                <button class="cell" data-index="2"></button>
+                <button class="cell" data-index="3"></button>
+                <button class="cell" data-index="4"></button>
+                <button class="cell" data-index="5"></button>
+                <button class="cell" data-index="6"></button>
+                <button class="cell" data-index="7"></button>
+                <button class="cell" data-index="8"></button>
+            </div>
+        </div>
+
+        <div id="end-message-container">
+            <button id="resolve-button" style="display: none;">Résoudre</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
